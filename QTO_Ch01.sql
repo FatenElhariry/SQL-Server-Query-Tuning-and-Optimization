@@ -28,8 +28,8 @@ SELECT DISTINCT(City) FROM Person.Address
 GO
 SET SHOWPLAN_ALL OFF
 GO
-
-SET STATISTICS PROFILE ON
+-- dispaly execution plan for items 
+SET STATISTICS PROFILE ON 
 GO
 SELECT * FROM Sales.SalesOrderDetail
 WHERE OrderQty * UnitPrice > 25000
@@ -42,7 +42,7 @@ WHERE SalesOrderID = 43666
 
 SELECT * FROM Sales.SalesOrderHeader
 WHERE SalesOrderID = 43666
-OPTION (QUERYTRACEON 8757)
+OPTION (QUERYTRACEON 8757) -- if you want to disable the trivial plan optimization:
 
 -- page 42
 SELECT pm.ProductModelID, pm.Name, Description, pl.CultureID,
